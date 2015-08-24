@@ -2,3 +2,5 @@
 HeightmapTest\
 **\obj
 **\bin
+*.mgcontent
+*.xnb

@@ -33,7 +33,7 @@ namespace HeightmapTest
 			graphics.ApplyChanges();
 
 			camera = new FreeCamera(new Vector3(0, 250, 0), 0f, 0f, graphics.GraphicsDevice);
-			terrain = new HeightMappedTerrain(Content.Load<Texture2D>("terrain"), 1, 100, Content.Load<Texture2D>("grass"), 10, new Vector3(1, -1, 0), graphics.GraphicsDevice, Content);
+			terrain = new HeightMappedTerrain(Content.Load<Texture2D>("terrain"), 1, 50, Content.Load<Texture2D>("grass"), 10, new Vector3(1, -1, 0), graphics.GraphicsDevice, Content);
 
 			base.Initialize();
 		}
