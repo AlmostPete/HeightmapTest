@@ -136,7 +136,7 @@ namespace HeightmapTest
 		private double noise(int x, int y)
 		{
 			int n = x + y * 57;
-			n = (n << 13) ^ n;
+			//n = (n << 13) ^ n;
 			int t = (n * (n * n * 15731 + 789221) + 1376312589) & 0x7fffffff;
 			return 1.0 - (double)t * 0.931322574615478515625e-9;
         }

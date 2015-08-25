@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace PerlinTester
 {
@@ -41,10 +42,10 @@ namespace PerlinTester
 				if (OldBitmap != null)
 					OldBitmap.Dispose();
 
-				OldBitmap = new Bitmap(600, 600);
-				for (int x = 0; x < 600; ++x)
+				OldBitmap = new Bitmap(512, 512);
+				for (int x = 0; x < 512; ++x)
 				{
-					for (int y = 0; y < 600; ++y)
+					for (int y = 0; y < 512; ++y)
 					{
 						double val = NoiseGenerator.Generate(x, y);
 						val = clampval(val * 255.0);
@@ -60,7 +61,16 @@ namespace PerlinTester
 
 		private double clampval(double d)
 		{
-			return (d > 256.0) ? 256.0 : ((d < 0.0) ? 0.0 : d);
+			return (d > 255.0) ? 255.0 : ((d < 0.0) ? 0.0 : d);
+		}
+
+		private void SaveButton_Click(object sender, EventArgs e)
+		{
+			if (OldBitmap == null)
+				return;
+
+			string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "terrain.bmp");
+			OldBitmap.Save(path, System.Drawing.Imaging.ImageFormat.Bmp);
 		}
 	}
 }

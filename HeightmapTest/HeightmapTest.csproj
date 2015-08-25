@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\grass.bmp" />
+    <Content Include="Content\terrain-old.bmp" />
     <Content Include="Content\terrain.bmp" />
     <Content Include="Content\TerrainEffect.hlsl" />
     <Content Include="Icon.ico" />

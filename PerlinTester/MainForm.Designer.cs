@@ -40,6 +40,7 @@
 			this.OctaveUpDown = new System.Windows.Forms.DomainUpDown();
 			this.GenerateButton = new System.Windows.Forms.Button();
 			this.SeedTextBox = new System.Windows.Forms.TextBox();
+			this.SaveButton = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.OutputPictureBox)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.PersistenceTrackBar)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.FrequencyTrackBar)).BeginInit();
@@ -159,9 +160,20 @@
 			this.SeedTextBox.TabIndex = 12;
 			this.SeedTextBox.Text = "0";
 			// 
+			// SaveButton
+			// 
+			this.SaveButton.Location = new System.Drawing.Point(12, 546);
+			this.SaveButton.Name = "SaveButton";
+			this.SaveButton.Size = new System.Drawing.Size(118, 44);
+			this.SaveButton.TabIndex = 13;
+			this.SaveButton.Text = "Save";
+			this.SaveButton.UseVisualStyleBackColor = true;
+			this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
+			// 
 			// MainForm
 			// 
 			this.ClientSize = new System.Drawing.Size(903, 601);
+			this.Controls.Add(this.SaveButton);
 			this.Controls.Add(this.SeedTextBox);
 			this.Controls.Add(this.GenerateButton);
 			this.Controls.Add(this.OctaveUpDown);
@@ -198,6 +210,7 @@
 		private System.Windows.Forms.DomainUpDown OctaveUpDown;
 		private System.Windows.Forms.Button GenerateButton;
 		private System.Windows.Forms.TextBox SeedTextBox;
+		private System.Windows.Forms.Button SaveButton;
 	}
 }
 

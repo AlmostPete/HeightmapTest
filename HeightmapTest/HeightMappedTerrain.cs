@@ -65,15 +65,15 @@ namespace HeightmapTest
 			effect.Parameters["TextureTiling"].SetValue(textureTiling);
 			effect.Parameters["LightDirection"].SetValue(lightDirection);
 
-			RasterizerState oldstate = GraphicsDevice.RasterizerState;
-			RasterizerState wirestate = new RasterizerState();
-			wirestate.FillMode = FillMode.WireFrame;
-			GraphicsDevice.RasterizerState = wirestate;
+			//RasterizerState oldstate = GraphicsDevice.RasterizerState;
+			//RasterizerState wirestate = new RasterizerState();
+			//wirestate.FillMode = FillMode.WireFrame;
+			//GraphicsDevice.RasterizerState = wirestate;
 
 			effect.Techniques[0].Passes[0].Apply();
 			GraphicsDevice.DrawIndexedPrimitives(PrimitiveType.TriangleList, 0, 0, nVertices, 0, nIndices / 3);
 
-			GraphicsDevice.RasterizerState = oldstate;
+			//GraphicsDevice.RasterizerState = oldstate;
 		}
 
 		private void extractHeightData()
