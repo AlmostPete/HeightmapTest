@@ -41,17 +41,20 @@
 			this.GenerateButton = new System.Windows.Forms.Button();
 			this.SeedTextBox = new System.Windows.Forms.TextBox();
 			this.SaveButton = new System.Windows.Forms.Button();
+			this.panel1 = new System.Windows.Forms.Panel();
 			((System.ComponentModel.ISupportInitialize)(this.OutputPictureBox)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.PersistenceTrackBar)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.FrequencyTrackBar)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.AmplitudeTrackBar)).BeginInit();
+			this.panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// OutputPictureBox
 			// 
-			this.OutputPictureBox.Location = new System.Drawing.Point(303, 0);
+			this.OutputPictureBox.Location = new System.Drawing.Point(0, 0);
 			this.OutputPictureBox.Name = "OutputPictureBox";
 			this.OutputPictureBox.Size = new System.Drawing.Size(600, 600);
+			this.OutputPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
 			this.OutputPictureBox.TabIndex = 0;
 			this.OutputPictureBox.TabStop = false;
 			// 
@@ -170,9 +173,19 @@
 			this.SaveButton.UseVisualStyleBackColor = true;
 			this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
 			// 
+			// panel1
+			// 
+			this.panel1.AutoScroll = true;
+			this.panel1.Controls.Add(this.OutputPictureBox);
+			this.panel1.Location = new System.Drawing.Point(302, 0);
+			this.panel1.Name = "panel1";
+			this.panel1.Size = new System.Drawing.Size(600, 600);
+			this.panel1.TabIndex = 14;
+			// 
 			// MainForm
 			// 
 			this.ClientSize = new System.Drawing.Size(903, 601);
+			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.SaveButton);
 			this.Controls.Add(this.SeedTextBox);
 			this.Controls.Add(this.GenerateButton);
@@ -185,12 +198,13 @@
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
-			this.Controls.Add(this.OutputPictureBox);
 			this.Name = "MainForm";
 			((System.ComponentModel.ISupportInitialize)(this.OutputPictureBox)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.PersistenceTrackBar)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.FrequencyTrackBar)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.AmplitudeTrackBar)).EndInit();
+			this.panel1.ResumeLayout(false);
+			this.panel1.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -211,6 +225,7 @@
 		private System.Windows.Forms.Button GenerateButton;
 		private System.Windows.Forms.TextBox SeedTextBox;
 		private System.Windows.Forms.Button SaveButton;
+		private System.Windows.Forms.Panel panel1;
 	}
 }
 

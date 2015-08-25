@@ -14,6 +14,8 @@ namespace PerlinTester
 {
 	public partial class MainForm : Form
 	{
+		const int BITMAPSIZE = 2000;
+
 		private HeightmapTest.PerlinNoiseGenerator NoiseGenerator;
 		private Bitmap OldBitmap;
 
@@ -42,10 +44,10 @@ namespace PerlinTester
 				if (OldBitmap != null)
 					OldBitmap.Dispose();
 
-				OldBitmap = new Bitmap(512, 512);
-				for (int x = 0; x < 512; ++x)
+				OldBitmap = new Bitmap(BITMAPSIZE, BITMAPSIZE);
+				for (int x = 0; x < BITMAPSIZE; ++x)
 				{
-					for (int y = 0; y < 512; ++y)
+					for (int y = 0; y < BITMAPSIZE; ++y)
 					{
 						double val = NoiseGenerator.Generate(x, y);
 						val = clampval(val * 255.0);
@@ -54,7 +56,7 @@ namespace PerlinTester
 					}
 				}
 
-				this.OutputPictureBox.Image = OldBitmap;
+				this.Invoke(new MethodInvoker(delegate { this.OutputPictureBox.Image = OldBitmap; }));
 			});
 			thread.Start();
 		}
